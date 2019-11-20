@@ -1,4 +1,7 @@
 def call(String msg = 'deploy_ansible') {
 echo "${msg}"
-  sh 'scp -i /var/lib/jenkins/.ssh/id_rsa -r /var/lib/jenkins/workspace/springboot-demo/target/springboot-0.0.1-SNAPSHOT.war ansadmin@172.31.31.91:/projects'
+  withCredentials([string(credentialsId: 'tomcat_dev', variable: 'password')]){
+    sh 'sshpass -p ${password} ssh -o StrictHostKeyChecking=no ansadmin@172.31.37.95 -C \"ansible-playbook /opt/playbooks/download.yml\"'
+  
+  }
 }

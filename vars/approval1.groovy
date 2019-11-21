@@ -3,13 +3,13 @@ echo "${msg}"
                       script{
                          emailext mimeType: 'text/html',
                  subject: "[Jenkins]${currentBuild.fullDisplayName}",
-                 to: "hegdevijay118@gmail.com",
-                 body: '''<a href="http://3.134.99.123:8080/">click to approve</a>'''
+                 to: "sou3shetagar@gmail.com",
+                 body: '''<a href="http://35.154.25.133:8080/">click to approve</a>'''
 
         def userInput = input id: 'userInput',
                               message: 'Let\'s promote?', 
                               submitterParameter: 'submitter',
-                              submitter: 'Abhishek',
+                              submitter: 'ramya',
                               parameters: [
                                 [$class: 'TextParameterDefinition', defaultValue: 'sit', description: 'Environment', name: 'env'],
                                 [$class: 'TextParameterDefinition', defaultValue: 'k8s', description: 'Target', name: 'target']]

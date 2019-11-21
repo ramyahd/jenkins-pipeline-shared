@@ -4,7 +4,7 @@ echo "${msg}"
                          emailext mimeType: 'text/html',
                  subject: "[Jenkins]${currentBuild.fullDisplayName}",
                  to: "sou3shetagar@gmail.com",
-                 body: '''<a href="http://35.154.25.133:8080/">click to approve</a>'''
+                 body: '''<a href="http://13.127.196.221:8080/">click to approve</a>'''
 
         def userInput = input id: 'userInput',
                               message: 'Let\'s promote?', 

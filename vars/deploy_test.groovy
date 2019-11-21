@@ -1,5 +1,7 @@
 def call(String msg = 'deploy_test') {
 echo "${msg}"
-                 sh 'ssh -t -t -i /var/lib/jenkins/.ssh/id_rsa ansadmin@172.31.31.91 "ansible-playbook /opt/playbooks/playfile.yml"'
+               withCredentials([string(credentialsId: 'tomcat_test', variable: 'password')]){
+    sh 'sshpass -p ${password} ssh -o StrictHostKeyChecking=no ansadmin@172.31.3.247 \"ansible-playbook opt/playbooks/test.yml\"'
 
+}
 }

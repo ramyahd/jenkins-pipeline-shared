@@ -4,7 +4,7 @@ def call(String msg = 'SONAR'){
   environment{
     scannerHome=tool 'sonarScanner'  
   }
-  withSonarQubeEnv('Sonarqube'){
+  withSonarQubeEnv('sonarqube'){
                      sh 'mvn sonar:sonar'
                 }
 }

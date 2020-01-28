@@ -20,7 +20,7 @@ def projLength = resultJson.name.size()
    }
    appendStr=appendStr+resultJson.name.substring(0, Math.min(projectName.length(), len));
    key=appendStr.toUpperCase();
- }
+   }
  def projKey = '"'+key+'"'
  
  httpRequest authentication: 'jira_password', 

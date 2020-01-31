@@ -4,7 +4,7 @@ import groovy.json.JsonSlurper
 createProject(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
-def projectName = '"'+resultJson.name+'"'
+def projectName = '"'+resultJson.jiraname+'"'
 def length = 3
 def projLength = resultJson.name.size()
  if(projLength>=3){

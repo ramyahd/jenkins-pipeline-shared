@@ -39,6 +39,6 @@ def projLength = resultJson.name.size()
  
 }
 def call(){
- def request = libraryResource 'data.json'
+ def request = libraryResource 'jira.json'
  createProject(request)
 }

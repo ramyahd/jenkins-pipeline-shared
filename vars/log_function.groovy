@@ -20,7 +20,7 @@ if(inputFile.exists())
 def call(message)
 {
  println(message)
- def request = libraryResource 'data.json'
+ def request = libraryResource 'jira.json'
  def jsonSlurper = new JsonSlurper() 
  def resultJson = jsonSlurper.parseText(request)
  def projectName = resultJson.name

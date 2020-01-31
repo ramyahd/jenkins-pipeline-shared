@@ -20,12 +20,12 @@ if(inputFile.exists())
 def call(message)
 {
  println(message)
- def request = libraryResource 'data1.json'
+ def request = libraryResource 'data.json'
  def jsonSlurper = new JsonSlurper() 
  def resultJson = jsonSlurper.parseText(request)
  def projectName = resultJson.key
   Date date = new Date() 
-  sh " echo '${date}' JIRA project with the projectname '${projectName}' ${message} >>log.txt"
+  sh " echo '${date}' ${message} with the name '${projectName}' >>log.txt"
 }
 /*def call(){
 def request = libraryResource 'data1.json'

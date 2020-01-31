@@ -20,6 +20,6 @@ echo "$projectName"
     } 
 }
 def call(){
- def request = libraryResource 'data.json'
+ def request = libraryResource 'jira.json'
  collectissues(request)
 }

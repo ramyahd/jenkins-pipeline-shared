@@ -4,7 +4,7 @@ import groovy.json.JsonSlurper
 createProject(String data){
 def jsonSlurper = new JsonSlurper() 
 def resultJson = jsonSlurper.parseText(data)
-def projectName = '"'+resultJson.jiraname+'"'
+def projectName = '"'+resultJson.name+'"'
 def length = 3
 def projLength = resultJson.name.size()
  if(projLength>=3){
@@ -28,7 +28,7 @@ def projLength = resultJson.name.size()
                     [maskValue: false, name: 'Accept', value: 'application/json']], 
     httpMode: 'POST', requestBody: """{
     "key": ${projKey},
-    "jiraname": ${projectName},
+    "name": ${projectName},
     "projectTypeKey": "business",
     "projectTemplateKey": "com.atlassian.jira-core-project-templates:jira-core-project-management",
     "description": "Example Project description",

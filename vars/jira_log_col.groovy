@@ -6,7 +6,7 @@ def call(message)
  def request = libraryResource 'data.json'
  def jsonSlurper = new JsonSlurper() 
  def resultJson = jsonSlurper.parseText(request)
- def projectName = resultJson.jirakey
+ def projectName = resultJson.key
   Date date = new Date() 
   sh " echo '${date}' ${message} with the name '${projectName}' >>log.txt"
 }
